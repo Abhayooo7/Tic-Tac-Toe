@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #375E97;
+}
+
+.game-name {
+  position: absolute;
+  top: 5%;
+  left: 40vw;
+  transform: translateX(-50%);
+  font-size: 50px; /* Responsive font size */
+  color: #FFBB00;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  animation: bounce 1s infinite alternate;
+  z-index: 3;
+}
+
+.status {
+  margin-top: 20vh;
+  font-size: 24px;
+  color: #FB6542;
+  background-color: #FFBB00;
+  padding: 10px 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateX(0) scale(1);
+  }
+  50% {
+    transform: translateX(20px) scale(1.1);
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+}
+
+.square {
+  background: #FB6542;
+  border: 5px solid #FFBB00;
+  font-size: 36px;
+  font-weight: bold;
+  color: #FFBB00;
+  line-height: 80px;
+  height: 80px;
+  width: 80px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  border-radius: 15px;
+  margin: 7px;
+}
+
+.square:hover {
+  background-color: #FFBB00;
+  box-shadow: 0 4px 8px rgba(0, 0, 1, 1);
+  transform: scale(1.1);
+}
+
+.square::before {
+  content: attr(data-symbol);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.square.clicked::before {
+  opacity: 1;
+}
+
+.board-row {
+  display: flex;
+  justify-content: center;
+}
+
+.game {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.game-info {
+  margin-top: 20px;
+}
+
+ol {
+  padding-left: 20px;
+}
+
+li {
+  margin-bottom: 10px;
+}
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.button, .move-button {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 16px;
+  background-color: #FB6542;
+  color: #FFBB00;
+  border: none;
+  padding: 10px 20px;
+  margin: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.button:hover, .move-button:hover {
+  background-color: #FFBB00;
+  transform: scale(1.05);
+}
+
+.move-buttons-container {
+  display: inline-block; /* Display buttons inline */
+  margin: 5px; /* Add margin between buttons */
+}
+
+
+.move-button {
+  width: 120px;
+}
